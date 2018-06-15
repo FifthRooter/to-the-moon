@@ -50,7 +50,7 @@ void Player::Update(float deltaTime) {
 			faceRight = false;
 	}
 	animation.Update(row, deltaTime, faceRight);
-	//body.setTextureRect(animation.uvRect);
+	body.setTextureRect(animation.uvRect);
 	body.move(movement);
 
 }
