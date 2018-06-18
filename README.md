@@ -41,7 +41,7 @@ the user will be shown a message saying the rocket did not have enough fuel, and
 - All velocity changes are applied instantaneously
 
 
-** Project installation Guide**
+**Project installation Guide**
 
  - The project uses SFML (Simple and Fast Multimedia Library) to build all graphical/interactive parts of the game
  - In addition, some additional libraries for general Math and for solving ODEs are used
