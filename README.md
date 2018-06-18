@@ -6,14 +6,14 @@
 called *LOw Frequency ARray on the Moon (LOFAR)*, whose main objective is to deploy
 a network of radio telescopes on the Moon in such a place that the array would be 
 protected from the electromagnetic radiation coming from the Earth. 
-The reason for this is because the absence of electromagnetic pollution from the Earth would allow for
+This is because the absence of electromagnetic pollution from the Earth would allow for
 an unperturbed observation of deep-space radio waves and result in better analysis results
 than the ones that are currently obtained by radio telescope arrays on Earth. 
 
 
 **Game description**
 
-- Vega rocket is used to bring small spacecraft into Low Earth Orbit (LEO), at 300km altitude (Vega specs: https://en.wikipedia.org/wiki/Vega_(rocket)#Specifications)
+- The vega rocket is used to bring small spacecraft into Low Earth Orbit (LEO), at 300km altitude (Vega specs: https://en.wikipedia.org/wiki/Vega_(rocket)#Specifications)
 - The spacecraft will need to bring itself into Low Lunar Orbit (LLO) in order to deliver its (scientific) payload using a
 Chemical Propulsion System (CPS).
 - The total mass of the spacecraft is 2200kg (can be modified in the CONFIG file). The user can determine how much of that is used for fuel.
