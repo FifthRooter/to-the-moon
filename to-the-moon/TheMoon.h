@@ -2,11 +2,11 @@
 #include <SFML/Graphics.hpp>
 #include "Animation.h"
 
-class Moon
+class TheMoon
 {
 public:
-	Moon(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float speed);
-	~Moon();
+	TheMoon(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float speed);
+	~TheMoon();
 
 	void Update(float deltaTime, float radiusEMOrbit);
 	void Draw(sf::RenderWindow& window);
@@ -24,7 +24,7 @@ private:
 	unsigned int row;
 	float speed;
 	bool faceRight;
-	float angle = 0.0f;
-	float angleStepsize = 0.1f;
+	float angle;
+	float angleStepsize;
 };
 

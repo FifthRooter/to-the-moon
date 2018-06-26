@@ -1,14 +1,16 @@
 #include "stdafx.h"
-#include "Moon.h"
+#include "TheMoon.h"
 #include "Animation.h"
 
 
-Moon::Moon(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float speed) :
+TheMoon::TheMoon(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float speed) :
 	animation(texture, imageCount, switchTime)
 {
 	this->speed = speed;
 	row = 0;
 	faceRight = false;
+	angle = 0.0f;
+	angleStepsize = 0.1f;
 
 	body.setSize(sf::Vector2f(60.0f, 85.0f));
 	body.setOrigin(body.getSize() / 2.0f);
@@ -18,11 +20,11 @@ Moon::Moon(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, floa
 
 }
 
-Moon::~Moon()
+TheMoon::~TheMoon()
 {
 }
 
-void Moon::Update(float deltaTime, float radiusEMOrbit) {
+void TheMoon::Update(float deltaTime, float radiusEMOrbit) {
 	sf::Vector2f movement(0.0f, 0.0f);
 
 	angleStepsize = deltaTime;
@@ -36,6 +38,6 @@ void Moon::Update(float deltaTime, float radiusEMOrbit) {
 	angle += angleStepsize;
 }
 
-void Moon::Draw(sf::RenderWindow& window) {
+void TheMoon::Draw(sf::RenderWindow& window) {
 	window.draw(body);
 }
