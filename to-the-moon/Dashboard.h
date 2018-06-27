@@ -19,6 +19,8 @@ public:
 private:
 	sf::Font font;
 	int textSize = 20;
+	string dummyText = "TESTESTEST";
+
 	string scWetMassTxt = "SC Wet Mass: ";
 	string scLunarSurfaceDistanceTxt = "SC-Lunar Surface Distance: ";
 	string lloHeightTxt = "LLO Height: ";
@@ -84,9 +86,9 @@ private:
 
 	int containerBorderThickness;
 
-	bool isSCWetMassContainerFocused = false;
-	bool isSCLunarSurfaceDistanceContainerFocused = false;
-	bool isLLOHeightContainerFocused = false;
+	bool isSCWetMassValueContainerFocused = false;
+	bool isSCLunarSurfaceDistanceValueContainerFocused = false;
+	bool isLLOHeightValueContainerFocused = false;
 	bool noFocus = true;
 
 	void toggleFocusAllContainers(bool);

@@ -119,9 +119,9 @@ Dashboard::Dashboard()
 
 
 	// Is container focused booleans
-	isSCLunarSurfaceDistanceContainerFocused = false;
-	isSCWetMassContainerFocused = false;
-	isLLOHeightContainerFocused = false;
+	isSCLunarSurfaceDistanceValueContainerFocused = false;
+	isSCWetMassValueContainerFocused = false;
+	isLLOHeightValueContainerFocused = false;
 	noFocus = true;
 }
 
@@ -133,22 +133,33 @@ Dashboard::~Dashboard()
 void Dashboard::Update(Vector2i& mousePosition)
 {
 	focusIfDashboardClicked(mousePosition);
-	
-	if (isSCWetMassContainerFocused) {
+	cout << "Mouse X position" << mousePosition.x << endl;
+	cout << "Mouse Y position" << mousePosition.y << endl;
+	if (isSCWetMassValueContainerFocused) {
+		cout << "Wet mass value container clicked!" << endl;
+		scWetMassValueText.setString(dummyText);
+		toggleFocusAllContainers(false);
 	}
-	else if (isSCLunarSurfaceDistanceContainerFocused) {
+	else if (isSCLunarSurfaceDistanceValueContainerFocused) {
+		cout << "SC-Lunar surface distance value container clicked!" << endl;
+		scLunarSurfaceDistanceValueText.setString(dummyText);
+		toggleFocusAllContainers(false);
 	}
-	else if (isLLOHeightContainerFocused) {
+	else if (isLLOHeightValueContainerFocused) {
+		cout << "LLO Height value container clicked!" << endl;
+		lloHeightValueText.setString(dummyText);
+		toggleFocusAllContainers(false);
 	}
 	else if (noFocus) {
-
+		cout << "No container focused!" << endl;
+		toggleFocusAllContainers(false);
 	}
 
 }
 
 void Dashboard::Draw(RenderWindow & window, sf::Text& textOther)
 {
-	window.draw(container);
+	//window.draw(container);
 	window.draw(scWetMassText);
 	window.draw(scLunarSurfaceDistanceText);
 	window.draw(lloHeightText);
@@ -165,9 +176,9 @@ void Dashboard::Draw(RenderWindow & window, sf::Text& textOther)
 
 void Dashboard::toggleFocusAllContainers(bool isFocused)
 {
-	isSCWetMassContainerFocused = isFocused;
-	isSCLunarSurfaceDistanceContainerFocused = isFocused;
-	isLLOHeightContainerFocused = isFocused;
+	isSCWetMassValueContainerFocused = isFocused;
+	isSCLunarSurfaceDistanceValueContainerFocused = isFocused;
+	isLLOHeightValueContainerFocused = isFocused;
 	noFocus = !isFocused;
 }
 
@@ -179,15 +190,15 @@ void Dashboard::focusIfDashboardClicked(Vector2i mousePosition)
 
 	if (scWetMassContainer.contains(mousePosition)) {
 		toggleFocusAllContainers(false);
-		isSCWetMassContainerFocused = true;
+		isSCWetMassValueContainerFocused = true;
 	}
 	else if (scLunarSurfaceDistanceContainer.contains(mousePosition)) {
 		toggleFocusAllContainers(false);
-		isSCLunarSurfaceDistanceContainerFocused = true;
+		isSCLunarSurfaceDistanceValueContainerFocused = true;
 	}
 	else if (lloHeightContainer.contains(mousePosition)) {
 		toggleFocusAllContainers(false);
-		isLLOHeightContainerFocused = true;
+		isLLOHeightValueContainerFocused = true;
 	}
 	else {
 		toggleFocusAllContainers(false);
