@@ -157,7 +157,7 @@ void Dashboard::Update(Vector2i& mousePosition)
 
 }
 
-void Dashboard::Draw(RenderWindow & window, sf::Text& textOther)
+void Dashboard::Draw(RenderWindow & window)
 {
 	//window.draw(container);
 	window.draw(scWetMassText);

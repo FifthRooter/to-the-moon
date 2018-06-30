@@ -14,7 +14,7 @@ public:
 	~Dashboard();
 
 	void Update(Vector2i& mousePosition);
-	void Draw(sf::RenderWindow& window, sf::Text& textOther);
+	void Draw(sf::RenderWindow& window);
 
 private:
 	sf::Font font;
