@@ -19,7 +19,7 @@ public:
 private:
 	sf::Font font;
 	int textSize = 20;
-	string dummyText = "TESTESTEST";
+	string dummyText = "000km";
 
 	string scWetMassTxt = "SC Wet Mass: ";
 	string scLunarSurfaceDistanceTxt = "SC-Lunar Surface Distance: ";
@@ -53,11 +53,11 @@ private:
 	Vector2f scWetMassTextContainerPosition = sf::Vector2f(-450.0f, -420.0f);
 	Vector2f scWetMassTextContainerSize = sf::Vector2f(300.0f, 60.0f);
 
-	Vector2f scWetMassValueContainerPosition = sf::Vector2f(-150.0f, -450.0f);
+	Vector2f scWetMassValueContainerPosition = sf::Vector2f(-150.0f, -420.0f);
 	Vector2f scWetMassValueContainerSize = sf::Vector2f(100.0f, 60.0f);
 
 	Vector2f scWetMassTextPosition = sf::Vector2f(-444.0f, -409.0f);
-	Vector2f scWetMassValuePosition = sf::Vector2f(-296.0f, -409.0f);
+	Vector2f scWetMassValuePosition = sf::Vector2f(-125.0f, -409.0f);
 
 
 	// SC-Lunar Surface Distance containers
@@ -71,17 +71,20 @@ private:
 	Vector2f scLunarSurfaceDistanceValueContainerSize = sf::Vector2f(100.0f, 60.0f);
 
 	Vector2f scLunarSurfaceDistanceTextPosition = sf::Vector2f(-444.0f, -349.0f);
-	Vector2f scLunarSurfaceDistanceValuePosition = sf::Vector2f(-180.0f, -349.0f);
+	Vector2f scLunarSurfaceDistanceValuePosition = sf::Vector2f(-125.0f, -349.0f);
 
 	// LLO Height containers
 	RectangleShape lloHeightTextContainer;
 	RectangleShape lloHeightValueContainer;
+
 	Vector2f lloHeightTextContainerPosition = sf::Vector2f(-450.0f, -300.0f);
 	Vector2f lloHeightTextContainerSize = sf::Vector2f(300.0f, 60.0f);
+
 	Vector2f lloHeightValueContainerPosition = sf::Vector2f(-150.0f, -300.0f);
 	Vector2f lloHeightValueContainerSize = sf::Vector2f(100.0f, 60.0f);
+
 	Vector2f lloHeightTextPosition = sf::Vector2f(-444.0f, -289.0f);
-	Vector2f lloHeightValuePosition = sf::Vector2f(-296.0f, -289.0f);
+	Vector2f lloHeightValuePosition = sf::Vector2f(-125.0f, -289.0f);
 
 
 	int containerBorderThickness;
