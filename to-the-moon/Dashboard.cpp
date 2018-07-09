@@ -53,7 +53,7 @@ Dashboard::Dashboard()
 	scLunarSurfaceDistanceText.setStyle(textStyle);
 	scLunarSurfaceDistanceText.setFillColor(textColor);
 
-	// SC-Lunar Surface Distance text setup
+	// SC-Lunar Surface Distance value setup
 	scLunarSurfaceDistanceValueText.setFont(font);
 	scLunarSurfaceDistanceValueText.setString(scLunarSurfaceDistanceValue);
 	scLunarSurfaceDistanceValueText.setPosition(scLunarSurfaceDistanceValuePosition);
@@ -73,7 +73,7 @@ Dashboard::Dashboard()
 	lloHeightText.setStyle(textStyle);
 	lloHeightText.setFillColor(textColor);
 
-	// LLO Height text setup
+	// LLO Height value setup
 	lloHeightValueText.setFont(font);
 	lloHeightValueText.setString(lloHeightValue);
 	lloHeightValueText.setPosition(lloHeightValuePosition);
@@ -87,9 +87,13 @@ Dashboard::Dashboard()
 	// SC Wet Mass container setup
 	scWetMassTextContainer.setPosition(scWetMassTextContainerPosition);
 	scWetMassTextContainer.setSize(scWetMassTextContainerSize);
+	scWetMassTextContainer.setOutlineColor(Color::White);
+	scWetMassTextContainer.setOutlineThickness(2.0f);
 
 	scWetMassValueContainer.setPosition(scWetMassValueContainerPosition);
 	scWetMassValueContainer.setSize(scWetMassValueContainerSize);
+	scWetMassValueContainer.setOutlineColor(Color::White);
+	scWetMassValueContainer.setOutlineThickness(2.0f);
 
 	scWetMassTextContainer.setFillColor(sf::Color::Transparent);
 	scWetMassValueContainer.setFillColor(sf::Color::Transparent);
@@ -98,9 +102,13 @@ Dashboard::Dashboard()
 	// SC-Lunar surface distance container setup
 	scLunarSurfaceDistanceTextContainer.setPosition(scLunarSurfaceDistanceTextContainerPosition);
 	scLunarSurfaceDistanceTextContainer.setSize(scLunarSurfaceDistanceTextContainerSize);
+	scLunarSurfaceDistanceTextContainer.setOutlineColor(Color::White);
+	scLunarSurfaceDistanceTextContainer.setOutlineThickness(2.0f);
 
-	scLunarSurfaceDistanceValueContainer.setPosition(scLunarSurfaceDistanceTextContainerPosition);
-	scLunarSurfaceDistanceValueContainer.setSize(scLunarSurfaceDistanceTextContainerSize);
+	scLunarSurfaceDistanceValueContainer.setPosition(scLunarSurfaceDistanceValueContainerPosition);
+	scLunarSurfaceDistanceValueContainer.setSize(scLunarSurfaceDistanceValueContainerSize);
+	scLunarSurfaceDistanceValueContainer.setOutlineColor(Color::White);
+	scLunarSurfaceDistanceValueContainer.setOutlineThickness(2.0f);
 
 	scLunarSurfaceDistanceTextContainer.setFillColor(sf::Color::Transparent);
 	scLunarSurfaceDistanceValueContainer.setFillColor(sf::Color::Transparent);
@@ -109,9 +117,13 @@ Dashboard::Dashboard()
 	// LLO Height container setup
 	lloHeightTextContainer.setPosition(lloHeightTextContainerPosition);
 	lloHeightTextContainer.setSize(lloHeightTextContainerSize);
+	lloHeightTextContainer.setOutlineColor(Color::White);
+	lloHeightTextContainer.setOutlineThickness(2.0f);
 
 	lloHeightValueContainer.setPosition(lloHeightValueContainerPosition);
 	lloHeightValueContainer.setSize(lloHeightValueContainerSize);
+	lloHeightValueContainer.setOutlineColor(Color::White);
+	lloHeightValueContainer.setOutlineThickness(2.0f);
 
 	lloHeightTextContainer.setFillColor(sf::Color::Transparent);
 	lloHeightValueContainer.setFillColor(sf::Color::Transparent);

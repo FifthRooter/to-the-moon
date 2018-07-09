@@ -21,7 +21,7 @@ Animation::~Animation()
 
 void Animation::Update(int row, float deltaTime, bool faceRight)
 {
-	currentImage.y = row;
+	currentImage.y = 0;
 	totalTime += deltaTime;
 
 	if (totalTime >= switchTime) {
