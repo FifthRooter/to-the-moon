@@ -1,7 +1,6 @@
 #pragma once
-#include "Planet.h"
-class Earth :
-	public Planet
+
+class Earths
 {
 public:
 	Earth();
