@@ -44,7 +44,7 @@ the user will be shown a message saying the rocket did not have enough fuel, and
 **Project installation Guide**
 
  - The project uses SFML (Simple and Fast Multimedia Library) to build all graphical/interactive parts of the game
- - In addition, some additional libraries for general Math and for solving ODEs are used
+ - In addition, some additional libraries for general Math and for solving ODEs are used. These are all contained in the collection of libraries 'boost'
  - The project is set up and compiled in Visual Studio 2017
  
  **_setting up SFML in Visual Studio_**
@@ -52,5 +52,6 @@ the user will be shown a message saying the rocket did not have enough fuel, and
  This part is a bit tedious and not very intuitive. 
  - Original SFML documentation: https://www.sfml-dev.org/tutorials/2.5/start-vc.php
  - A video tutorial I followed to set it up (was easier because video - very visual): https://www.youtube.com/watch?v=axIgxBQVBg0
+ - If the program is now run, a specific error C4996 will arise. Disable this in the solution properties under C/C++ > Advanced > Disable Specific Warnings. Add 4996 to the list
  
  
