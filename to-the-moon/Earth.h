@@ -1,6 +1,6 @@
 #pragma once
 
-class Earths
+class Earth
 {
 public:
 	Earth();

@@ -13,21 +13,25 @@ public:
 	Dashboard();
 	~Dashboard();
 
-	void Update(Vector2i& mousePosition);
+	void Update(Vector2i& mousePosition, RenderWindow& window);
 	void Draw(sf::RenderWindow& window);
 
 private:
+
 	sf::Font font;
 	int textSize = 20;
-	string dummyText = "000km";
+
+	string scWetMass;
+	string scLunarSurfaceDistance;
+	string lloHeight;
 
 	string scWetMassTxt = "SC Wet Mass: ";
 	string scLunarSurfaceDistanceTxt = "SC-Lunar Surface Distance: ";
 	string lloHeightTxt = "LLO Height: ";
 
-	string scWetMassValue = "2200kg";
-	string scLunarSurfaceDistanceValue = "100km";
-	string lloHeightValue = "20km";
+	string scWetMassValue = "0000kg";
+	string scLunarSurfaceDistanceValue = "000km";
+	string lloHeightValue = "0000km";
 
 	Text scWetMassText;
 	Text scLunarSurfaceDistanceText;
@@ -96,5 +100,15 @@ private:
 
 	void toggleFocusAllContainers(bool);
 	void focusIfDashboardClicked(Vector2i);
+
+private:
+	Event evnt;
+	Clock clock;
+	String inputString;
+	String getInput(RenderWindow& window);
+	bool isEnterPressed = false;
+	bool isNumKeyPressed = false;
+	float keyPressDelay = 0.3f;
+	float deltaTime = 0.4f;
 };
 

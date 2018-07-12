@@ -156,11 +156,9 @@
     <ClInclude Include="Animation.h" />
     <ClInclude Include="Dashboard.h" />
     <ClInclude Include="Earth.h" />
-    <ClInclude Include="ODESolver.h" />
     <ClInclude Include="Physics.h" />
     <ClInclude Include="Spacecraft.h" />
     <ClInclude Include="TheMoon.h" />
-    <ClInclude Include="Planet.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -169,11 +167,9 @@
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Dashboard.cpp" />
     <ClCompile Include="Earth.cpp" />
-    <ClCompile Include="ODESolver.cpp" />
     <ClCompile Include="Physics.cpp" />
     <ClCompile Include="Spacecraft.cpp" />
     <ClCompile Include="TheMoon.cpp" />
-    <ClCompile Include="Planet.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

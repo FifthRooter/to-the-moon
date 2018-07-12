@@ -142,24 +142,27 @@ Dashboard::~Dashboard()
 {
 }
 
-void Dashboard::Update(Vector2i& mousePosition)
+void Dashboard::Update(Vector2i& mousePosition, RenderWindow& window)
 {
 	focusIfDashboardClicked(mousePosition);
 	cout << "Mouse X position" << mousePosition.x << endl;
 	cout << "Mouse Y position" << mousePosition.y << endl;
 	if (isSCWetMassValueContainerFocused) {
-		cout << "Wet mass value container clicked!" << endl;
-		scWetMassValueText.setString(dummyText);
+		cout << "Enter new Wet Mass value: ";
+		scWetMass = getInput(window);
+		scWetMassValueText.setString(scWetMass + "kg");
 		toggleFocusAllContainers(false);
 	}
 	else if (isSCLunarSurfaceDistanceValueContainerFocused) {
 		cout << "SC-Lunar surface distance value container clicked!" << endl;
-		scLunarSurfaceDistanceValueText.setString(dummyText);
+		scLunarSurfaceDistance = getInput(window);
+		scLunarSurfaceDistanceValueText.setString(scLunarSurfaceDistance + "km");
 		toggleFocusAllContainers(false);
 	}
 	else if (isLLOHeightValueContainerFocused) {
 		cout << "LLO Height value container clicked!" << endl;
-		lloHeightValueText.setString(dummyText);
+		lloHeight = getInput(window);
+		lloHeightValueText.setString(lloHeight + "km");
 		toggleFocusAllContainers(false);
 	}
 	else if (noFocus) {
@@ -217,4 +220,53 @@ void Dashboard::focusIfDashboardClicked(Vector2i mousePosition)
 		noFocus = true;
 	}
 }
+
+String Dashboard::getInput(RenderWindow& window)
+{
+	/*window.setKeyRepeatEnabled(false);
+
+	while (!isEnterPressed) {
+
+
+		if (Keyboard::isKeyPressed(Keyboard::Enter)) {
+			isEnterPressed = true;
+		}
+		else if (Keyboard::isKeyPressed(Keyboard::Num0)) {
+			inputString = inputString + '0';
+		}
+		else if (Keyboard::isKeyPressed(Keyboard::Num1)) {
+			inputString = inputString + '1';
+		}
+		else if (Keyboard::isKeyPressed(Keyboard::Num2)) {
+			inputString = inputString + '2';
+		}
+		else if (Keyboard::isKeyPressed(Keyboard::Num3)) {
+			inputString = inputString + '3';
+		}
+		else if (Keyboard::isKeyPressed(Keyboard::Num4)) {
+			inputString = inputString + '4';
+		}
+		else if (Keyboard::isKeyPressed(Keyboard::Num5)) {
+			inputString = inputString + '5';
+		}
+		else if (Keyboard::isKeyPressed(Keyboard::Num6)) {
+			inputString = inputString + '6';
+		}
+		else if (Keyboard::isKeyPressed(Keyboard::Num7)) {
+			inputString = inputString + '7';
+		}
+		else if (Keyboard::isKeyPressed(Keyboard::Num8)) {
+			inputString = inputString + '8';
+		}
+		else if (Keyboard::isKeyPressed(Keyboard::Num9)) {
+			inputString = inputString + '9';
+		}
+
+	}
+	window.setKeyRepeatEnabled(true);*/
+	isEnterPressed = false;
+
+	return inputString;
+}
+
 
