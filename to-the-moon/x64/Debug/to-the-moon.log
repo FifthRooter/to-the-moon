@@ -1,10 +1,8 @@
-﻿  Player.cpp
-  to-the-moon.cpp
+﻿  to-the-moon.cpp
 c:\users\tomsb\desktop\skills\programming\c++\to-the-moon\to-the-moon\to-the-moon.cpp(39): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
 c:\users\tomsb\desktop\skills\programming\c++\to-the-moon\to-the-moon\to-the-moon.cpp(130): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
 c:\users\tomsb\desktop\skills\programming\c++\to-the-moon\to-the-moon\to-the-moon.cpp(131): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-c:\users\tomsb\desktop\skills\programming\c++\to-the-moon\to-the-moon\to-the-moon.cpp(157): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\tomsb\desktop\skills\programming\c++\to-the-moon\to-the-moon\to-the-moon.cpp(158): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\tomsb\desktop\skills\programming\c++\to-the-moon\to-the-moon\to-the-moon.cpp(145): warning C4101: 'orbitalPeriod': unreferenced local variable
-  Generating Code...
+c:\users\tomsb\desktop\skills\programming\c++\to-the-moon\to-the-moon\to-the-moon.cpp(161): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\tomsb\desktop\skills\programming\c++\to-the-moon\to-the-moon\to-the-moon.cpp(162): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\tomsb\desktop\skills\programming\c++\to-the-moon\to-the-moon\to-the-moon.cpp(149): warning C4101: 'orbitalPeriod': unreferenced local variable
   to-the-moon.vcxproj -> C:\Users\tomsb\Desktop\Skills\Programming\C++\to-the-moon\x64\Debug\to-the-moon.exe

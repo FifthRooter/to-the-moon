@@ -3,6 +3,8 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <string>
+#include <iostream>
+
 
 using namespace std;
 using namespace sf;
@@ -48,6 +50,31 @@ private:
 
 	Color textColor = sf::Color::Red;
 	Text::Style textStyle = sf::Text::Style::Regular;
+
+	// Equation textures
+	RectangleShape rocketEquation;
+	RectangleShape deltaVTransfer;
+	RectangleShape thetaMoonEquation;
+	RectangleShape gravityLaw;
+
+	Texture rocketEquationTexture;
+	Texture deltaVTransferTexture;
+	Texture thetaMoonEquationTexture;
+	Texture gravityLawTexture;
+
+	Vector2f rocketEquationTexturePosition = Vector2f(-200.0f, -440.0f);
+	Vector2f rocketEquationTextureSize = Vector2f(255.0f, 73.0f);
+
+	Vector2f gravityLawTexturePosition = Vector2f(-156.0f, -298.0f);
+	Vector2f gravityLawTextureSize = Vector2f(161.0f, 54.0f);
+
+	Vector2f deltaVTransferTexturePosition = Vector2f(115.0f, -440.0f);
+	Vector2f deltaVTransferTextureSize = Vector2f(367.0f, 76.0f);
+
+	Vector2f thetaMoonEquationTexturePosition = Vector2f(190.0f, -304.0f);
+	Vector2f thetaMoonEquationTextureSize = Vector2f(214.0f, 66.0f);
+
+
 
 	// Dashboard container
 	RectangleShape container;

@@ -17,6 +17,34 @@ Dashboard::Dashboard()
 	}
 	font.loadFromFile("fonts/Inconsolata/Inconsolata-Regular.ttf");
 
+	rocketEquationTexture.loadFromFile("images/rocket_equation.png");
+	deltaVTransferTexture.loadFromFile("images/transfer_delta_v.png");
+	thetaMoonEquationTexture.loadFromFile("images/moon_angle.png");
+	gravityLawTexture.loadFromFile("images/law_of_gravity.png");
+
+
+
+
+	// Equation textures
+
+	rocketEquation.setTexture(&rocketEquationTexture);
+	deltaVTransfer.setTexture(&deltaVTransferTexture);
+	gravityLaw.setTexture(&gravityLawTexture);
+	thetaMoonEquation.setTexture(&thetaMoonEquationTexture);
+
+	rocketEquation.setPosition(rocketEquationTexturePosition);
+	deltaVTransfer.setPosition(deltaVTransferTexturePosition);
+	gravityLaw.setPosition(gravityLawTexturePosition);
+	thetaMoonEquation.setPosition(thetaMoonEquationTexturePosition);
+
+
+	rocketEquation.setSize(rocketEquationTextureSize);
+	deltaVTransfer.setSize(deltaVTransferTextureSize);
+	gravityLaw.setSize(gravityLawTextureSize);
+	thetaMoonEquation.setSize(thetaMoonEquationTextureSize);
+
+
+
 	// Container setup
 	container.setSize(containerSize);
 	container.setPosition(containerPosition);
@@ -173,6 +201,10 @@ String Dashboard::Update(Vector2i& mousePosition, RenderWindow& window)
 void Dashboard::Draw(RenderWindow & window)
 {
 	//window.draw(container);
+	window.draw(thetaMoonEquation);
+	window.draw(gravityLaw);
+	window.draw(deltaVTransfer);
+	window.draw(rocketEquation);
 	window.draw(scWetMassText);
 	window.draw(scLunarSurfaceDistanceText);
 	window.draw(lloHeightText);

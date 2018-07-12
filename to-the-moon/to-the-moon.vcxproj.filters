@@ -27,16 +27,10 @@
     <ClInclude Include="Player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Earth.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="TheMoon.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Physics.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Spacecraft.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Dashboard.h">
@@ -56,16 +50,10 @@
     <ClCompile Include="Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Earth.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="TheMoon.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Physics.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Spacecraft.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Dashboard.cpp">

@@ -155,9 +155,7 @@
   <ItemGroup>
     <ClInclude Include="Animation.h" />
     <ClInclude Include="Dashboard.h" />
-    <ClInclude Include="Earth.h" />
     <ClInclude Include="Physics.h" />
-    <ClInclude Include="Spacecraft.h" />
     <ClInclude Include="TheMoon.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="stdafx.h" />
@@ -166,9 +164,7 @@
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Dashboard.cpp" />
-    <ClCompile Include="Earth.cpp" />
     <ClCompile Include="Physics.cpp" />
-    <ClCompile Include="Spacecraft.cpp" />
     <ClCompile Include="TheMoon.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="stdafx.cpp">
