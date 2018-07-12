@@ -33,9 +33,9 @@ private:
 	string scLunarSurfaceDistanceTxt = "SC-Lunar Surface Distance: ";
 	string lloHeightTxt = "LLO Height: ";
 
-	string scWetMassValue = "0000kg";
-	string scLunarSurfaceDistanceValue = "000km";
-	string lloHeightValue = "0000km";
+	int scWetMassValue = 1234;
+	int scLunarSurfaceDistanceValue = 1111;
+	int lloHeightValue = 4321;
 
 	Text scWetMassText;
 	Text scLunarSurfaceDistanceText;

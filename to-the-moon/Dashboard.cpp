@@ -35,7 +35,7 @@ Dashboard::Dashboard()
 
 	// Wet Mass value setup
 	scWetMassValueText.setFont(font);
-	scWetMassValueText.setString(scWetMassValue);
+	scWetMassValueText.setString(to_string(scWetMassValue) + "kg");
 	scWetMassValueText.setPosition(scWetMassValuePosition);
 
 	scWetMassValueText.setCharacterSize(textSize);
@@ -55,7 +55,7 @@ Dashboard::Dashboard()
 
 	// SC-Lunar Surface Distance value setup
 	scLunarSurfaceDistanceValueText.setFont(font);
-	scLunarSurfaceDistanceValueText.setString(scLunarSurfaceDistanceValue);
+	scLunarSurfaceDistanceValueText.setString(to_string(scLunarSurfaceDistanceValue) + "km");
 	scLunarSurfaceDistanceValueText.setPosition(scLunarSurfaceDistanceValuePosition);
 
 	scLunarSurfaceDistanceValueText.setCharacterSize(textSize);
@@ -75,7 +75,7 @@ Dashboard::Dashboard()
 
 	// LLO Height value setup
 	lloHeightValueText.setFont(font);
-	lloHeightValueText.setString(lloHeightValue);
+	lloHeightValueText.setString(to_string(lloHeightValue) + "km");
 	lloHeightValueText.setPosition(lloHeightValuePosition);
 
 	lloHeightValueText.setCharacterSize(textSize);
@@ -148,25 +148,21 @@ String Dashboard::Update(Vector2i& mousePosition, RenderWindow& window)
 	cout << "Mouse X position" << mousePosition.x << endl;
 	cout << "Mouse Y position" << mousePosition.y << endl;
 	if (isSCWetMassValueContainerFocused) {
-		cout << "Enter new Wet Mass value: ";
 		valueToBeChanged = "SCWetMass";
 		scWetMassValueText.setString(scWetMass + "kg");
 		toggleFocusAllContainers(false);
 	}
 	else if (isSCLunarSurfaceDistanceValueContainerFocused) {
-		cout << "SC-Lunar surface distance value container clicked!" << endl;
 		valueToBeChanged = "SCLunarSurfaceDistance";
 		scLunarSurfaceDistanceValueText.setString(scLunarSurfaceDistance + "km");
 		toggleFocusAllContainers(false);
 	}
 	else if (isLLOHeightValueContainerFocused) {
-		cout << "LLO Height value container clicked!" << endl;
 		valueToBeChanged = "LLOHeight";
 		lloHeightValueText.setString(lloHeight + "km");
 		toggleFocusAllContainers(false);
 	}
 	else if (noFocus) {
-		cout << "No container focused!" << endl;
 		valueToBeChanged = "noFocus";
 		toggleFocusAllContainers(false);
 	}
@@ -225,18 +221,18 @@ void Dashboard::focusIfDashboardClicked(Vector2i mousePosition)
 
 void Dashboard::pushInput(int parameterValue, string parameter)
 {
-	cout << "pushInput() received the changed parameter value: " << endl;
-	cout << parameter << ": " << to_string(parameterValue) << endl;
-
 	if (parameter == "SCWetMass") {
+		scWetMassValue = parameterValue;
 		scWetMassValueText.setString(to_string(parameterValue) + "kg");
 		valueToBeChanged = "noFocus";
 	}
 	else if (parameter == "SCLunarSurfaceDistance") {
+		scLunarSurfaceDistanceValue = parameterValue;
 		scLunarSurfaceDistanceValueText.setString(to_string(parameterValue) + "km");
 		valueToBeChanged = "noFocus";
 	}
 	else if (parameter == "LLOHeight") {
+		lloHeightValue = parameterValue;
 		lloHeightValueText.setString(to_string(parameterValue) + "km");
 		valueToBeChanged = "noFocus";
 	}

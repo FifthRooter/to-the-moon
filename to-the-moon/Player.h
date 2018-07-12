@@ -18,6 +18,14 @@ private:
 	Animation animation;
 	unsigned int row;
 	float speed;
+
+	bool scFixedInOrbit = true;
 	bool faceRight;
+
+	float angleStep;
+	float radiusESCOrbit;
+	sf::Vector2i orbitCoordinates;
+
+	void updateOrbitCoordinates(float deltaTime);
 };
 

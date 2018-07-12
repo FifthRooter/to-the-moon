@@ -14,7 +14,7 @@ Player::Player(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, 
 	body.setOrigin(body.getSize() / 2.0f);
 	//body.setFillColor(sf::Color::Red);
 	//body.setOrigin(50.0f, 50.0f);
-	body.setPosition(206.0f, 206.0f);
+	body.setPosition(70.0f, 0.0f);
 	body.setTexture(texture);
 }
 
@@ -25,18 +25,6 @@ Player::~Player()
 
 void Player::Update(float deltaTime) {
 	sf::Vector2f movement(0.0f, 0.0f);
-
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-		movement.x -= speed * deltaTime;
-	
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-		movement.x += speed * deltaTime;
-
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
-		movement.y -= speed * deltaTime;
-
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-		movement.y += speed * deltaTime;
 
 	if (movement.x == 0.0f) {
 		row = 0;
@@ -49,12 +37,23 @@ void Player::Update(float deltaTime) {
 		else
 			faceRight = false;
 	}
+
 	animation.Update(row, deltaTime, faceRight);
+	if (scFixedInOrbit) {
+		updateOrbitCoordinates(deltaTime);
+	}
 	body.setTextureRect(animation.uvRect);
 	body.move(movement);
-
 }
 
 void Player::Draw(sf::RenderWindow& window) {
 	window.draw(body);
+}
+
+void Player::updateOrbitCoordinates(float deltaTime) {
+	radiusESCOrbit = sqrtf(powf(70.0f, 2.0f) + powf(70, 2.0f));
+	angleStep = deltaTime;
+
+	/*if (angle > 2 * M_PI)
+		angle = 0.00f;*/
 }
