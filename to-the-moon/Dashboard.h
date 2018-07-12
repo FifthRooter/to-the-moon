@@ -13,8 +13,12 @@ public:
 	Dashboard();
 	~Dashboard();
 
-	void Update(Vector2i& mousePosition, RenderWindow& window);
+	String Update(Vector2i& mousePosition, RenderWindow& window);
 	void Draw(sf::RenderWindow& window);
+
+public:
+	String valueToBeChanged;
+	void pushInput(int, string);
 
 private:
 
@@ -100,15 +104,5 @@ private:
 
 	void toggleFocusAllContainers(bool);
 	void focusIfDashboardClicked(Vector2i);
-
-private:
-	Event evnt;
-	Clock clock;
-	String inputString;
-	String getInput(RenderWindow& window);
-	bool isEnterPressed = false;
-	bool isNumKeyPressed = false;
-	float keyPressDelay = 0.3f;
-	float deltaTime = 0.4f;
 };
 

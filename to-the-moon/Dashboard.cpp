@@ -142,34 +142,36 @@ Dashboard::~Dashboard()
 {
 }
 
-void Dashboard::Update(Vector2i& mousePosition, RenderWindow& window)
+String Dashboard::Update(Vector2i& mousePosition, RenderWindow& window)
 {
 	focusIfDashboardClicked(mousePosition);
 	cout << "Mouse X position" << mousePosition.x << endl;
 	cout << "Mouse Y position" << mousePosition.y << endl;
 	if (isSCWetMassValueContainerFocused) {
 		cout << "Enter new Wet Mass value: ";
-		scWetMass = getInput(window);
+		valueToBeChanged = "SCWetMass";
 		scWetMassValueText.setString(scWetMass + "kg");
 		toggleFocusAllContainers(false);
 	}
 	else if (isSCLunarSurfaceDistanceValueContainerFocused) {
 		cout << "SC-Lunar surface distance value container clicked!" << endl;
-		scLunarSurfaceDistance = getInput(window);
+		valueToBeChanged = "SCLunarSurfaceDistance";
 		scLunarSurfaceDistanceValueText.setString(scLunarSurfaceDistance + "km");
 		toggleFocusAllContainers(false);
 	}
 	else if (isLLOHeightValueContainerFocused) {
 		cout << "LLO Height value container clicked!" << endl;
-		lloHeight = getInput(window);
+		valueToBeChanged = "LLOHeight";
 		lloHeightValueText.setString(lloHeight + "km");
 		toggleFocusAllContainers(false);
 	}
 	else if (noFocus) {
 		cout << "No container focused!" << endl;
+		valueToBeChanged = "noFocus";
 		toggleFocusAllContainers(false);
 	}
 
+	return valueToBeChanged;
 }
 
 void Dashboard::Draw(RenderWindow & window)
@@ -221,52 +223,23 @@ void Dashboard::focusIfDashboardClicked(Vector2i mousePosition)
 	}
 }
 
-String Dashboard::getInput(RenderWindow& window)
+void Dashboard::pushInput(int parameterValue, string parameter)
 {
-	/*window.setKeyRepeatEnabled(false);
+	cout << "pushInput() received the changed parameter value: " << endl;
+	cout << parameter << ": " << to_string(parameterValue) << endl;
 
-	while (!isEnterPressed) {
-
-
-		if (Keyboard::isKeyPressed(Keyboard::Enter)) {
-			isEnterPressed = true;
-		}
-		else if (Keyboard::isKeyPressed(Keyboard::Num0)) {
-			inputString = inputString + '0';
-		}
-		else if (Keyboard::isKeyPressed(Keyboard::Num1)) {
-			inputString = inputString + '1';
-		}
-		else if (Keyboard::isKeyPressed(Keyboard::Num2)) {
-			inputString = inputString + '2';
-		}
-		else if (Keyboard::isKeyPressed(Keyboard::Num3)) {
-			inputString = inputString + '3';
-		}
-		else if (Keyboard::isKeyPressed(Keyboard::Num4)) {
-			inputString = inputString + '4';
-		}
-		else if (Keyboard::isKeyPressed(Keyboard::Num5)) {
-			inputString = inputString + '5';
-		}
-		else if (Keyboard::isKeyPressed(Keyboard::Num6)) {
-			inputString = inputString + '6';
-		}
-		else if (Keyboard::isKeyPressed(Keyboard::Num7)) {
-			inputString = inputString + '7';
-		}
-		else if (Keyboard::isKeyPressed(Keyboard::Num8)) {
-			inputString = inputString + '8';
-		}
-		else if (Keyboard::isKeyPressed(Keyboard::Num9)) {
-			inputString = inputString + '9';
-		}
-
+	if (parameter == "SCWetMass") {
+		scWetMassValueText.setString(to_string(parameterValue) + "kg");
+		valueToBeChanged = "noFocus";
 	}
-	window.setKeyRepeatEnabled(true);*/
-	isEnterPressed = false;
-
-	return inputString;
+	else if (parameter == "SCLunarSurfaceDistance") {
+		scLunarSurfaceDistanceValueText.setString(to_string(parameterValue) + "km");
+		valueToBeChanged = "noFocus";
+	}
+	else if (parameter == "LLOHeight") {
+		lloHeightValueText.setString(to_string(parameterValue) + "km");
+		valueToBeChanged = "noFocus";
+	}
 }
 
 
