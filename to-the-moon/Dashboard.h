@@ -57,6 +57,10 @@ private:
 	RectangleShape thetaMoonEquation;
 	RectangleShape gravityLaw;
 
+	RectangleShape dummyRect;
+	Vector2f dummyRectPosition = Vector2f(-200.0f, -200.0f);
+	Vector2f dummyRectSize = Vector2f(70.0f, 70.0f);
+
 	Texture rocketEquationTexture;
 	Texture deltaVTransferTexture;
 	Texture thetaMoonEquationTexture;
@@ -75,11 +79,6 @@ private:
 	Vector2f thetaMoonEquationTextureSize = Vector2f(214.0f, 66.0f);
 
 
-
-	// Dashboard container
-	RectangleShape container;
-	Vector2f containerPosition = sf::Vector2f(-450.0f, -420.0f);
-	Vector2f containerSize = sf::Vector2f(400.0f, 180.0f);
 
 	// SC Wet Mass containers
 	RectangleShape scWetMassTextContainer;
@@ -121,8 +120,6 @@ private:
 	Vector2f lloHeightTextPosition = sf::Vector2f(-664.0f, -289.0f);
 	Vector2f lloHeightValuePosition = sf::Vector2f(-345.0f, -289.0f);
 
-
-	int containerBorderThickness;
 
 	bool isSCWetMassValueContainerFocused = false;
 	bool isSCLunarSurfaceDistanceValueContainerFocused = false;
