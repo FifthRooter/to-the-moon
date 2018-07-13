@@ -121,7 +121,7 @@ private:
 	Vector2f lloHeightValueContainerSize = sf::Vector2f(100.0f, 60.0f);
 
 	Vector2f lloHeightTextPosition = sf::Vector2f(-VIEW_WIDTH / 2 + 46.0f, -324.0f);
-	Vector2f lloHeightValuePosition = sf::Vector2f(-VIEW_WIDTH / 2 + 55.0f, -324.0f);
+	Vector2f lloHeightValuePosition = sf::Vector2f(-VIEW_WIDTH / 2 + 355.0f, -324.0f);
 
 
 	bool isSCWetMassValueContainerFocused = false;

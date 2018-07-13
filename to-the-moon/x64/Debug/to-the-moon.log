@@ -13,4 +13,5 @@ c:\users\tomsb\desktop\skills\programming\c++\to-the-moon\to-the-moon\to-the-moo
 c:\users\tomsb\desktop\skills\programming\c++\to-the-moon\to-the-moon\to-the-moon.cpp(166): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 c:\users\tomsb\desktop\skills\programming\c++\to-the-moon\to-the-moon\to-the-moon.cpp(153): warning C4101: 'orbitalPeriod': unreferenced local variable
   Generating Code...
+  LINK : C:\Users\tomsb\Desktop\Skills\Programming\C++\to-the-moon\x64\Debug\to-the-moon.exe not found or not built by the last incremental link; performing full link
   to-the-moon.vcxproj -> C:\Users\tomsb\Desktop\Skills\Programming\C++\to-the-moon\x64\Debug\to-the-moon.exe
