@@ -44,7 +44,7 @@ Dashboard::Dashboard()
 	dummyRect.setSize(dummyRectSize);
 	dummyRect.setOutlineColor(Color::Green);
 	dummyRect.setFillColor(Color::Black);
-	dummyRect.setOutlineThickness(2.0f);
+	dummyRect.setOutlineThickness(1.0f);
 
 	// Wet Mass text setup
 	scWetMassText.setFont(font);
@@ -194,7 +194,7 @@ String Dashboard::Update(Vector2i& mousePosition, RenderWindow& window)
 
 void Dashboard::Draw(RenderWindow & window)
 {
-	window.draw(dummyRect);
+	//window.draw(dummyRect);
 	window.draw(thetaMoonEquation);
 	window.draw(gravityLaw);
 	window.draw(deltaVTransfer);
