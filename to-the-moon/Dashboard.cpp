@@ -167,8 +167,8 @@ Dashboard::~Dashboard()
 String Dashboard::Update(Vector2i& mousePosition, RenderWindow& window)
 {
 	focusIfDashboardClicked(mousePosition);
-	cout << "Mouse X position" << mousePosition.x << endl;
-	cout << "Mouse Y position" << mousePosition.y << endl;
+	//cout << "Mouse X position" << mousePosition.x << endl;
+	//cout << "Mouse Y position" << mousePosition.y << endl;
 	if (isSCWetMassValueContainerFocused) {
 		valueToBeChanged = "SCWetMass";
 		scWetMassValueText.setString(scWetMass + "kg");
@@ -211,6 +211,90 @@ void Dashboard::Draw(RenderWindow & window)
 	window.draw(lloHeightValueContainer);
 	window.draw(scWetMassTextContainer);
 	window.draw(scWetMassValueContainer);
+}
+
+void Dashboard::updatePositions(Vector2u & resizedWindowDimensions)
+{
+	VIEW_HEIGHT = resizedWindowDimensions.y;																				 // Define height of the window
+	VIEW_WIDTH = resizedWindowDimensions.x;																					// Define width of the window
+
+	rocketEquationTexturePosition.x = -VIEW_WIDTH / 2 + 212.0f;
+	rocketEquationTexturePosition.y = VIEW_HEIGHT / 2 - 257.0f;
+
+	gravityLawTexturePosition.x = -VIEW_WIDTH / 2 + 35.0f;
+	gravityLawTexturePosition.y = VIEW_HEIGHT / 2 - 307.0f;
+
+	deltaVTransferTexturePosition.x = -VIEW_WIDTH / 2 + 100.0f;
+	deltaVTransferTexturePosition.y = VIEW_HEIGHT / 2 - 100.0f; 
+
+	thetaMoonEquationTexturePosition.x = -VIEW_WIDTH / 2 + 35.0f;
+	thetaMoonEquationTexturePosition.y = VIEW_HEIGHT / 2 - 186.0f;
+
+
+
+	scWetMassTextContainerPosition.x = -VIEW_WIDTH / 2 + 30.0f;
+	scWetMassTextContainerPosition.y = -VIEW_HEIGHT / 2 + 30.0f;
+
+	scWetMassValueContainerPosition.x = -VIEW_WIDTH / 2 + 330.0f;
+	scWetMassValueContainerPosition.y = -VIEW_HEIGHT / 2 + 30.0f;
+
+	scWetMassTextPosition.x = -VIEW_WIDTH / 2 + 46.0f;
+	scWetMassTextPosition.y = -VIEW_HEIGHT / 2 + 46.0f;
+
+	scWetMassValuePosition.x = -VIEW_WIDTH / 2 + 355.0f;
+	scWetMassValuePosition.y = -VIEW_HEIGHT / 2 + 46.0f;
+
+
+
+
+	scLunarSurfaceDistanceTextContainerPosition.x = -VIEW_WIDTH / 2 + 30.0f;
+	scLunarSurfaceDistanceTextContainerPosition.y = -VIEW_HEIGHT / 2 + 90.0f;
+
+	scLunarSurfaceDistanceValueContainerPosition.x = -VIEW_WIDTH / 2 + 330.0f;
+	scLunarSurfaceDistanceValueContainerPosition.y = -VIEW_HEIGHT / 2 + 90.0f;
+
+	scLunarSurfaceDistanceTextPosition.x = -VIEW_WIDTH / 2 + 46.0f;
+	scLunarSurfaceDistanceTextPosition.y = -VIEW_HEIGHT / 2 + 106.0f;
+
+	scLunarSurfaceDistanceValuePosition.x = -VIEW_WIDTH / 2 + 355.0f;
+	scLunarSurfaceDistanceValuePosition.y = -VIEW_HEIGHT / 2 + 106.0f;
+
+
+
+
+	lloHeightTextContainerPosition.x = -VIEW_WIDTH / 2 + 30.0f;
+	lloHeightTextContainerPosition.y = -VIEW_HEIGHT / 2 + 150.0f;
+
+	lloHeightValueContainerPosition.x = -VIEW_WIDTH / 2 + 330.0f;
+	lloHeightValueContainerPosition.y = -VIEW_HEIGHT / 2 + 150.0f;
+
+	lloHeightTextPosition.x = -VIEW_WIDTH / 2 + 46.0f;
+	lloHeightTextPosition.y = -VIEW_HEIGHT / 2 + 166.0f;
+
+	lloHeightValuePosition.x = -VIEW_WIDTH / 2 + 355.0f;
+	lloHeightValuePosition.y = -VIEW_HEIGHT / 2 + 166.0f;
+
+	rocketEquation.setPosition(rocketEquationTexturePosition);
+	deltaVTransfer.setPosition(deltaVTransferTexturePosition);
+	gravityLaw.setPosition(gravityLawTexturePosition);
+	thetaMoonEquation.setPosition(thetaMoonEquationTexturePosition);
+
+	scWetMassText.setPosition(scWetMassTextPosition);
+	scWetMassValueText.setPosition(scWetMassValuePosition);
+	scWetMassTextContainer.setPosition(scWetMassTextContainerPosition);
+	scWetMassValueContainer.setPosition(scWetMassValueContainerPosition);
+
+
+	scLunarSurfaceDistanceText.setPosition(scLunarSurfaceDistanceTextPosition);
+	scLunarSurfaceDistanceValueText.setPosition(scLunarSurfaceDistanceValuePosition);
+	scLunarSurfaceDistanceTextContainer.setPosition(scLunarSurfaceDistanceTextContainerPosition);
+	scLunarSurfaceDistanceValueContainer.setPosition(scLunarSurfaceDistanceValueContainerPosition);
+
+	lloHeightText.setPosition(lloHeightTextPosition);
+	lloHeightValueText.setPosition(lloHeightValuePosition);
+	lloHeightTextContainer.setPosition(lloHeightTextContainerPosition);
+	lloHeightValueContainer.setPosition(lloHeightValueContainerPosition);
+
 }
 
 void Dashboard::toggleFocusAllContainers(bool isFocused)

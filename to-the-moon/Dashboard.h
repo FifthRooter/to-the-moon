@@ -17,6 +17,7 @@ public:
 
 	String Update(Vector2i& mousePosition, RenderWindow& window);
 	void Draw(sf::RenderWindow& window);
+	void updatePositions(Vector2u& resizedWindowDimensions);
 
 public:
 	String valueToBeChanged;
@@ -24,8 +25,8 @@ public:
 
 private:
 
-	const float VIEW_HEIGHT = 1080.0f;																				 // Define height of the window
-	const float VIEW_WIDTH = 1800.0f;																				 // Define width of the window
+	float VIEW_HEIGHT = 1020.0f;																				 // Define height of the window
+	float VIEW_WIDTH = 1800.0f;																				 // Define width of the window
 
 	sf::Font font;
 	int textSize = 18;
@@ -69,16 +70,16 @@ private:
 	Texture thetaMoonEquationTexture;
 	Texture gravityLawTexture;
 
-	Vector2f rocketEquationTexturePosition = Vector2f(-VIEW_WIDTH / 2 + 212.0f, 233.0f);
+	Vector2f rocketEquationTexturePosition = Vector2f(-VIEW_WIDTH / 2 + 212.0f, VIEW_HEIGHT / 2 - 257.0f);
 	Vector2f rocketEquationTextureSize = Vector2f(255.0f, 73.0f);
 
-	Vector2f gravityLawTexturePosition = Vector2f(-VIEW_WIDTH / 2 + 35.0f, 183.0f);
+	Vector2f gravityLawTexturePosition = Vector2f(-VIEW_WIDTH / 2 + 35.0f, VIEW_HEIGHT / 2 - 307.0f);
 	Vector2f gravityLawTextureSize = Vector2f(161.0f, 54.0f);
 
-	Vector2f deltaVTransferTexturePosition = Vector2f(-VIEW_WIDTH / 2 + 100.0f, 390.0f);
+	Vector2f deltaVTransferTexturePosition = Vector2f(-VIEW_WIDTH / 2 + 100.0f, VIEW_HEIGHT / 2 - 80.0f);
 	Vector2f deltaVTransferTextureSize = Vector2f(367.0f, 76.0f);
 
-	Vector2f thetaMoonEquationTexturePosition = Vector2f(-VIEW_WIDTH / 2 + 35.0f, 304.0f);
+	Vector2f thetaMoonEquationTexturePosition = Vector2f(-VIEW_WIDTH / 2 + 35.0f, VIEW_HEIGHT / 2 - 186.0f);
 	Vector2f thetaMoonEquationTextureSize = Vector2f(214.0f, 66.0f);
 
 
@@ -87,41 +88,41 @@ private:
 	RectangleShape scWetMassTextContainer;
 	RectangleShape scWetMassValueContainer;
 
-	Vector2f scWetMassTextContainerPosition = sf::Vector2f(-VIEW_WIDTH / 2 + 30.0f, -460.0f);
+	Vector2f scWetMassTextContainerPosition = sf::Vector2f(-VIEW_WIDTH / 2 + 30.0f, -VIEW_HEIGHT / 2 + 30.0f);
 	Vector2f scWetMassTextContainerSize = sf::Vector2f(300.0f, 60.0f);
 
-	Vector2f scWetMassValueContainerPosition = sf::Vector2f(-VIEW_WIDTH / 2 + 330.0f, -460.0f);
+	Vector2f scWetMassValueContainerPosition = sf::Vector2f(-VIEW_WIDTH / 2 + 330.0f, -VIEW_HEIGHT / 2 + 30.0f);
 	Vector2f scWetMassValueContainerSize = sf::Vector2f(100.0f, 60.0f);
 
-	Vector2f scWetMassTextPosition = sf::Vector2f(-VIEW_WIDTH / 2 + 46.0f, -444.0f);
-	Vector2f scWetMassValuePosition = sf::Vector2f(-VIEW_WIDTH / 2 + 355.0f, -444.0f);
+	Vector2f scWetMassTextPosition = sf::Vector2f(-VIEW_WIDTH / 2 + 46.0f, -VIEW_HEIGHT / 2 + 46.0f);
+	Vector2f scWetMassValuePosition = sf::Vector2f(-VIEW_WIDTH / 2 + 355.0f, -VIEW_HEIGHT / 2 + 46.0f);
 
 
 	// SC-Lunar Surface Distance containers
 	RectangleShape scLunarSurfaceDistanceTextContainer;
 	RectangleShape scLunarSurfaceDistanceValueContainer;
 
-	Vector2f scLunarSurfaceDistanceTextContainerPosition = sf::Vector2f(-VIEW_WIDTH / 2 + 30.0f, -400.0f);
+	Vector2f scLunarSurfaceDistanceTextContainerPosition = sf::Vector2f(-VIEW_WIDTH / 2 + 30.0f, -VIEW_HEIGHT / 2 + 90.0f);
 	Vector2f scLunarSurfaceDistanceTextContainerSize = sf::Vector2f(300.0f, 60.0f);
 
-	Vector2f scLunarSurfaceDistanceValueContainerPosition = sf::Vector2f(-VIEW_WIDTH / 2 + 330.0f, -400.0f);
+	Vector2f scLunarSurfaceDistanceValueContainerPosition = sf::Vector2f(-VIEW_WIDTH / 2 + 330.0f, -VIEW_HEIGHT / 2 + 90.0f);
 	Vector2f scLunarSurfaceDistanceValueContainerSize = sf::Vector2f(100.0f, 60.0f);
 
-	Vector2f scLunarSurfaceDistanceTextPosition = sf::Vector2f(-VIEW_WIDTH / 2 + 46.0f, -384.0f);
-	Vector2f scLunarSurfaceDistanceValuePosition = sf::Vector2f(-VIEW_WIDTH / 2 + 355.0f, -384.0f);
+	Vector2f scLunarSurfaceDistanceTextPosition = sf::Vector2f(-VIEW_WIDTH / 2 + 46.0f, -VIEW_HEIGHT / 2 + 106.0f);
+	Vector2f scLunarSurfaceDistanceValuePosition = sf::Vector2f(-VIEW_WIDTH / 2 + 355.0f, -VIEW_HEIGHT / 2 + 106.0f);
 
 	// LLO Height containers
 	RectangleShape lloHeightTextContainer;
 	RectangleShape lloHeightValueContainer;
 
-	Vector2f lloHeightTextContainerPosition = sf::Vector2f(-VIEW_WIDTH / 2 + 30.0f, -340.0f);
+	Vector2f lloHeightTextContainerPosition = sf::Vector2f(-VIEW_WIDTH / 2 + 30.0f, -VIEW_HEIGHT / 2 + 150.0);
 	Vector2f lloHeightTextContainerSize = sf::Vector2f(300.0f, 60.0f);
 
-	Vector2f lloHeightValueContainerPosition = sf::Vector2f(-VIEW_WIDTH / 2 + 330.0f, -340.0f); // Screen height has been changed! Shouldn't matter soon anyway
+	Vector2f lloHeightValueContainerPosition = sf::Vector2f(-VIEW_WIDTH / 2 + 330.0f, -VIEW_HEIGHT / 2 + 150.0f); // Screen height has been changed! Shouldn't matter soon anyway
 	Vector2f lloHeightValueContainerSize = sf::Vector2f(100.0f, 60.0f);
 
-	Vector2f lloHeightTextPosition = sf::Vector2f(-VIEW_WIDTH / 2 + 46.0f, -324.0f);
-	Vector2f lloHeightValuePosition = sf::Vector2f(-VIEW_WIDTH / 2 + 355.0f, -324.0f);
+	Vector2f lloHeightTextPosition = sf::Vector2f(-VIEW_WIDTH / 2 + 46.0f, -VIEW_HEIGHT / 2 + 166.0f);
+	Vector2f lloHeightValuePosition = sf::Vector2f(-VIEW_WIDTH / 2 + 355.0f, -VIEW_HEIGHT / 2 + 166.0f);
 
 
 	bool isSCWetMassValueContainerFocused = false;
