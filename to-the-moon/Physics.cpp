@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "Physics.h"
 
-Physics::Physics(sf::Vector2i scPosition, sf::Vector2i moonPosition)
+Physics::Physics()
 {
 }
 
@@ -12,4 +12,8 @@ Physics::~Physics()
 float Physics::getEarthMoonDistance()
 {
 	return distanceEarthSC;
+}
+
+Vector2f Physics::getSCCoordinates() {
+	return scCoordinates;
 }

@@ -22,6 +22,10 @@ public:
 	String valueToBeChanged;
 	void pushInput(int, string);
 	int getOutputAngle();
+	void endGamePopup(bool);
+	void closeGamePopup();
+	bool disableGamePopup;
+	bool isEndGamePopupOpen;
 
 private:
 
@@ -38,10 +42,11 @@ private:
 
 	Text outputAngleText;
 	Text outputAngleValueText;
-	
 
-	Color textColor = sf::Color::Red;
-	Text::Style textStyle = sf::Text::Style::Regular;
+	Color successColor = Color::Green;
+	Color failureColor = Color::Red;
+	Color textColor = Color::Red;
+	Text::Style textStyle = Text::Style::Regular;
 
 	// Equation textures
 	RectangleShape rocketEquation;
@@ -82,6 +87,12 @@ private:
 	Vector2f outputAngleValuePosition = sf::Vector2f(-VIEW_WIDTH / 2 + 352.0f, -444.0f);
 
 
+	// End game text 
+	Text endGameTxt;
+	int endGameTextSize = 60;
+
+
+	Vector2f endGameTextPosition = Vector2f(-130.0f, -40.0f);
 
 
 	bool isOutputAngleValueContainerFocused = false;

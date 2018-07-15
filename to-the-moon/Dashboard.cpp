@@ -61,7 +61,6 @@ Dashboard::Dashboard()
 
 
 
-
 	// Output angle container setup
 	outputAngleTextContainer.setPosition(outputAngleTextContainerPosition);
 	outputAngleTextContainer.setSize(outputAngleTextContainerSize);
@@ -76,6 +75,14 @@ Dashboard::Dashboard()
 	outputAngleTextContainer.setFillColor(sf::Color::Transparent);
 	outputAngleValueContainer.setFillColor(sf::Color::Transparent);
 
+
+	// End game text setup
+	endGameTxt.setFont(font);
+	endGameTxt.setCharacterSize(endGameTextSize);
+	endGameTxt.setString("Yo");
+	endGameTxt.setStyle(textStyle);
+	endGameTxt.setColor(successColor);
+	endGameTxt.setPosition(endGameTextPosition);
 
 	// Is container focused booleans
 	isOutputAngleValueContainerFocused = false;
@@ -107,6 +114,9 @@ String Dashboard::Update(Vector2i& mousePosition, RenderWindow& window)
 
 void Dashboard::Draw(RenderWindow & window)
 {
+	if (!disableGamePopup && isEndGamePopupOpen) {
+		window.draw(endGameTxt);
+	}
 	window.draw(thetaMoonEquation);
 	window.draw(gravityLaw);
 	window.draw(deltaVTransfer);
@@ -149,6 +159,20 @@ void Dashboard::pushInput(int parameterValue, string parameter)
 int Dashboard::getOutputAngle()
 {
 	return outputAngleValue;
+}
+
+void Dashboard::endGamePopup(bool isSuccess)
+{
+	cout << "End of Game popup toggled!" << endl;
+	if (isSuccess) {
+		endGameTxt.setString("Success!");
+	}
+	else endGameTxt.setString("Launch failed :(");
+}
+
+void Dashboard::closeGamePopup() {
+	isEndGamePopupOpen = false;
+	disableGamePopup = true;
 }
 
 

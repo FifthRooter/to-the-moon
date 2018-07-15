@@ -9,9 +9,10 @@ using namespace sf;
 class Physics
 {
 public:
-	Physics(sf::Vector2i scPosition, sf::Vector2i moonPosition);
+	Physics();
 	~Physics();
 	float getEarthMoonDistance();
+	Vector2f getSCCoordinates();
 
 private:
 
@@ -44,8 +45,8 @@ private:
 	Vector2i moonCoordinatePrevious;
 	Vector2i deltaMoonCoordinates;
 
-	Vector2i scCoordinates;
-	Vector2i scCoordinatesPrevious;
+	Vector2f scCoordinates;
+	Vector2f scCoordinatesPrevious;
 	Vector2i deltaSCCoordinates;
 };
 
