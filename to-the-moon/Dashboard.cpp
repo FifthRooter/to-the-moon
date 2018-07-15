@@ -40,122 +40,45 @@ Dashboard::Dashboard()
 	gravityLaw.setSize(gravityLawTextureSize);
 	thetaMoonEquation.setSize(thetaMoonEquationTextureSize);
 
-	dummyRect.setPosition(dummyRectPosition);
-	dummyRect.setSize(dummyRectSize);
-	dummyRect.setOutlineColor(Color::Green);
-	dummyRect.setFillColor(Color::Black);
-	dummyRect.setOutlineThickness(1.0f);
 
-	// Wet Mass text setup
-	scWetMassText.setFont(font);
-	scWetMassText.setString(scWetMassTxt);
-	scWetMassText.setPosition(scWetMassTextPosition);
+	// Output angle text setup
+	outputAngleText.setFont(font);
+	outputAngleText.setString(outputAngleTxt);
+	outputAngleText.setPosition(outputAngleTextPosition);
 
-	scWetMassText.setCharacterSize(textSize);
-	scWetMassText.setStyle(textStyle);
-	scWetMassText.setFillColor(textColor);
+	outputAngleText.setCharacterSize(textSize);
+	outputAngleText.setStyle(textStyle);
+	outputAngleText.setFillColor(textColor);
 
-	// Wet Mass value setup
-	scWetMassValueText.setFont(font);
-	scWetMassValueText.setString(to_string(scWetMassValue) + "kg");
-	scWetMassValueText.setPosition(scWetMassValuePosition);
+	// Output angle value setup
+	outputAngleValueText.setFont(font);
+	outputAngleValueText.setString(to_string(outputAngleValue) + "deg");
+	outputAngleValueText.setPosition(outputAngleValuePosition);
 
-	scWetMassValueText.setCharacterSize(textSize);
-	scWetMassValueText.setStyle(textStyle);
-	scWetMassValueText.setFillColor(textColor);
+	outputAngleValueText.setCharacterSize(textSize);
+	outputAngleValueText.setStyle(textStyle);
+	outputAngleValueText.setFillColor(textColor);
 
 
 
-	// SC-Lunar Surface Distance text setup
-	scLunarSurfaceDistanceText.setFont(font);
-	scLunarSurfaceDistanceText.setString(scLunarSurfaceDistanceTxt);
-	scLunarSurfaceDistanceText.setPosition(scLunarSurfaceDistanceTextPosition);
 
-	scLunarSurfaceDistanceText.setCharacterSize(textSize);
-	scLunarSurfaceDistanceText.setStyle(textStyle);
-	scLunarSurfaceDistanceText.setFillColor(textColor);
+	// Output angle container setup
+	outputAngleTextContainer.setPosition(outputAngleTextContainerPosition);
+	outputAngleTextContainer.setSize(outputAngleTextContainerSize);
+	outputAngleTextContainer.setOutlineColor(Color::White);
+	outputAngleTextContainer.setOutlineThickness(2.0f);
 
-	// SC-Lunar Surface Distance value setup
-	scLunarSurfaceDistanceValueText.setFont(font);
-	scLunarSurfaceDistanceValueText.setString(to_string(scLunarSurfaceDistanceValue) + "km");
-	scLunarSurfaceDistanceValueText.setPosition(scLunarSurfaceDistanceValuePosition);
+	outputAngleValueContainer.setPosition(outputAngleValueContainerPosition);
+	outputAngleValueContainer.setSize(outputAngleValueContainerSize);
+	outputAngleValueContainer.setOutlineColor(Color::White);
+	outputAngleValueContainer.setOutlineThickness(2.0f);
 
-	scLunarSurfaceDistanceValueText.setCharacterSize(textSize);
-	scLunarSurfaceDistanceValueText.setStyle(textStyle);
-	scLunarSurfaceDistanceValueText.setFillColor(textColor);
-
-
-
-	// LLO Height text setup
-	lloHeightText.setFont(font);
-	lloHeightText.setString(lloHeightTxt);
-	lloHeightText.setPosition(lloHeightTextPosition);
-
-	lloHeightText.setCharacterSize(textSize);
-	lloHeightText.setStyle(textStyle);
-	lloHeightText.setFillColor(textColor);
-
-	// LLO Height value setup
-	lloHeightValueText.setFont(font);
-	lloHeightValueText.setString(to_string(lloHeightValue) + "km");
-	lloHeightValueText.setPosition(lloHeightValuePosition);
-
-	lloHeightValueText.setCharacterSize(textSize);
-	lloHeightValueText.setStyle(textStyle);
-	lloHeightValueText.setFillColor(textColor);
-
-
-
-	// SC Wet Mass container setup
-	scWetMassTextContainer.setPosition(scWetMassTextContainerPosition);
-	scWetMassTextContainer.setSize(scWetMassTextContainerSize);
-	scWetMassTextContainer.setOutlineColor(Color::White);
-	scWetMassTextContainer.setOutlineThickness(2.0f);
-
-	scWetMassValueContainer.setPosition(scWetMassValueContainerPosition);
-	scWetMassValueContainer.setSize(scWetMassValueContainerSize);
-	scWetMassValueContainer.setOutlineColor(Color::White);
-	scWetMassValueContainer.setOutlineThickness(2.0f);
-
-	scWetMassTextContainer.setFillColor(sf::Color::Transparent);
-	scWetMassValueContainer.setFillColor(sf::Color::Transparent);
-
-
-	// SC-Lunar surface distance container setup
-	scLunarSurfaceDistanceTextContainer.setPosition(scLunarSurfaceDistanceTextContainerPosition);
-	scLunarSurfaceDistanceTextContainer.setSize(scLunarSurfaceDistanceTextContainerSize);
-	scLunarSurfaceDistanceTextContainer.setOutlineColor(Color::White);
-	scLunarSurfaceDistanceTextContainer.setOutlineThickness(2.0f);
-
-	scLunarSurfaceDistanceValueContainer.setPosition(scLunarSurfaceDistanceValueContainerPosition);
-	scLunarSurfaceDistanceValueContainer.setSize(scLunarSurfaceDistanceValueContainerSize);
-	scLunarSurfaceDistanceValueContainer.setOutlineColor(Color::White);
-	scLunarSurfaceDistanceValueContainer.setOutlineThickness(2.0f);
-
-	scLunarSurfaceDistanceTextContainer.setFillColor(sf::Color::Transparent);
-	scLunarSurfaceDistanceValueContainer.setFillColor(sf::Color::Transparent);
-
-
-	// LLO Height container setup
-	lloHeightTextContainer.setPosition(lloHeightTextContainerPosition);
-	lloHeightTextContainer.setSize(lloHeightTextContainerSize);
-	lloHeightTextContainer.setOutlineColor(Color::White);
-	lloHeightTextContainer.setOutlineThickness(2.0f);
-
-	lloHeightValueContainer.setPosition(lloHeightValueContainerPosition);
-	lloHeightValueContainer.setSize(lloHeightValueContainerSize);
-	lloHeightValueContainer.setOutlineColor(Color::White);
-	lloHeightValueContainer.setOutlineThickness(2.0f);
-
-	lloHeightTextContainer.setFillColor(sf::Color::Transparent);
-	lloHeightValueContainer.setFillColor(sf::Color::Transparent);
-
+	outputAngleTextContainer.setFillColor(sf::Color::Transparent);
+	outputAngleValueContainer.setFillColor(sf::Color::Transparent);
 
 
 	// Is container focused booleans
-	isSCLunarSurfaceDistanceValueContainerFocused = false;
-	isSCWetMassValueContainerFocused = false;
-	isLLOHeightValueContainerFocused = false;
+	isOutputAngleValueContainerFocused = false;
 	noFocus = true;
 }
 
@@ -169,19 +92,9 @@ String Dashboard::Update(Vector2i& mousePosition, RenderWindow& window)
 	focusIfDashboardClicked(mousePosition);
 	cout << "Mouse X position" << mousePosition.x << endl;
 	cout << "Mouse Y position" << mousePosition.y << endl;
-	if (isSCWetMassValueContainerFocused) {
-		valueToBeChanged = "SCWetMass";
-		scWetMassValueText.setString(scWetMass + "kg");
-		toggleFocusAllContainers(false);
-	}
-	else if (isSCLunarSurfaceDistanceValueContainerFocused) {
-		valueToBeChanged = "SCLunarSurfaceDistance";
-		scLunarSurfaceDistanceValueText.setString(scLunarSurfaceDistance + "km");
-		toggleFocusAllContainers(false);
-	}
-	else if (isLLOHeightValueContainerFocused) {
-		valueToBeChanged = "LLOHeight";
-		lloHeightValueText.setString(lloHeight + "km");
+	if (isOutputAngleValueContainerFocused) {
+		valueToBeChanged = "OutputAngle";
+		outputAngleValueText.setString(outputAngle + "deg");
 		toggleFocusAllContainers(false);
 	}
 	else if (noFocus) {
@@ -194,50 +107,29 @@ String Dashboard::Update(Vector2i& mousePosition, RenderWindow& window)
 
 void Dashboard::Draw(RenderWindow & window)
 {
-	//window.draw(dummyRect);
 	window.draw(thetaMoonEquation);
 	window.draw(gravityLaw);
 	window.draw(deltaVTransfer);
 	window.draw(rocketEquation);
-	window.draw(scWetMassText);
-	window.draw(scLunarSurfaceDistanceText);
-	window.draw(lloHeightText);
-	window.draw(scWetMassValueText);
-	window.draw(scLunarSurfaceDistanceValueText);
-	window.draw(lloHeightValueText);
-	window.draw(scLunarSurfaceDistanceTextContainer);
-	window.draw(scLunarSurfaceDistanceValueContainer);
-	window.draw(lloHeightTextContainer);
-	window.draw(lloHeightValueContainer);
-	window.draw(scWetMassTextContainer);
-	window.draw(scWetMassValueContainer);
+	window.draw(outputAngleText);
+	window.draw(outputAngleValueText);
+	window.draw(outputAngleTextContainer);
+	window.draw(outputAngleValueContainer);
 }
 
 void Dashboard::toggleFocusAllContainers(bool isFocused)
 {
-	isSCWetMassValueContainerFocused = isFocused;
-	isSCLunarSurfaceDistanceValueContainerFocused = isFocused;
-	isLLOHeightValueContainerFocused = isFocused;
+	isOutputAngleValueContainerFocused = isFocused;
 	noFocus = !isFocused;
 }
 
 void Dashboard::focusIfDashboardClicked(Vector2i mousePosition)
 {
-	sf::IntRect scWetMassContainer(scWetMassValueContainer.getPosition().x, scWetMassValueContainer.getPosition().y, scWetMassValueContainer.getGlobalBounds().width, scWetMassValueContainer.getGlobalBounds().height);
-	sf::IntRect scLunarSurfaceDistanceContainer(scLunarSurfaceDistanceValueContainer.getPosition().x, scLunarSurfaceDistanceValueContainer.getPosition().y, scLunarSurfaceDistanceValueContainer.getGlobalBounds().width, scLunarSurfaceDistanceValueContainer.getGlobalBounds().height);
-	sf::IntRect lloHeightContainer(lloHeightValueContainer.getPosition().x, lloHeightValueContainer.getPosition().y, lloHeightValueContainer.getGlobalBounds().width, lloHeightValueContainer.getGlobalBounds().height);
+	sf::IntRect scWetMassContainer(outputAngleValueContainer.getPosition().x, outputAngleValueContainer.getPosition().y, outputAngleValueContainer.getGlobalBounds().width, outputAngleValueContainer.getGlobalBounds().height);
 
 	if (scWetMassContainer.contains(mousePosition)) {
 		toggleFocusAllContainers(false);
-		isSCWetMassValueContainerFocused = true;
-	}
-	else if (scLunarSurfaceDistanceContainer.contains(mousePosition)) {
-		toggleFocusAllContainers(false);
-		isSCLunarSurfaceDistanceValueContainerFocused = true;
-	}
-	else if (lloHeightContainer.contains(mousePosition)) {
-		toggleFocusAllContainers(false);
-		isLLOHeightValueContainerFocused = true;
+		isOutputAngleValueContainerFocused = true;
 	}
 	else {
 		toggleFocusAllContainers(false);
@@ -247,21 +139,16 @@ void Dashboard::focusIfDashboardClicked(Vector2i mousePosition)
 
 void Dashboard::pushInput(int parameterValue, string parameter)
 {
-	if (parameter == "SCWetMass") {
-		scWetMassValue = parameterValue;
-		scWetMassValueText.setString(to_string(parameterValue) + "kg");
+	if (parameter == "OutputAngle") {
+		outputAngleValue = parameterValue;
+		outputAngleValueText.setString(to_string(parameterValue) + "deg");
 		valueToBeChanged = "noFocus";
 	}
-	else if (parameter == "SCLunarSurfaceDistance") {
-		scLunarSurfaceDistanceValue = parameterValue;
-		scLunarSurfaceDistanceValueText.setString(to_string(parameterValue) + "km");
-		valueToBeChanged = "noFocus";
-	}
-	else if (parameter == "LLOHeight") {
-		lloHeightValue = parameterValue;
-		lloHeightValueText.setString(to_string(parameterValue) + "km");
-		valueToBeChanged = "noFocus";
-	}
+}
+
+int Dashboard::getOutputAngle()
+{
+	return outputAngleValue;
 }
 
 

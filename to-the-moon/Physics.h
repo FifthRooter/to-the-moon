@@ -11,6 +11,7 @@ class Physics
 public:
 	Physics(sf::Vector2i scPosition, sf::Vector2i moonPosition);
 	~Physics();
+	float getEarthMoonDistance();
 
 private:
 
@@ -25,6 +26,7 @@ private:
 	float deltaVp = velocityCp * (sqrtf(1+eccentricity) - 1) ; // to enter E-M Hohmann transfer orbit, this change in velocity required
 	float MU_EARTH = 3.98600441*1e+14; 
 	float MU_MOON = 4.9048695*1e+12; 
+	float distanceEarthSC = 384400; //km
 
 	float massDry;
 	float massProp;
@@ -45,8 +47,5 @@ private:
 	Vector2i scCoordinates;
 	Vector2i scCoordinatesPrevious;
 	Vector2i deltaSCCoordinates;
-	
-	float distanceEarthSC;
-
 };
 
