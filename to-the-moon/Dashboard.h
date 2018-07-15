@@ -20,8 +20,8 @@ public:
 
 public:
 	String valueToBeChanged;
-	void pushInput(int, string);
-	int getOutputAngle();
+	void pushInput(double, string);
+	double getOutputAngle();
 	void endGamePopup(bool);
 	void closeGamePopup();
 	bool disableGamePopup;
@@ -38,7 +38,7 @@ private:
 	string outputAngle;
 	string outputAngleTxt = "Input launch angle: ";
 
-	int outputAngleValue = 1234;
+	double outputAngleValue = 1234;
 
 	Text outputAngleText;
 	Text outputAngleValueText;
@@ -77,15 +77,25 @@ private:
 	RectangleShape outputAngleTextContainer;
 	RectangleShape outputAngleValueContainer;
 
-	Vector2f outputAngleTextContainerPosition = sf::Vector2f(-VIEW_WIDTH / 2 + 30.0f, -460.0f);
-	Vector2f outputAngleTextContainerSize = sf::Vector2f(300.0f, 60.0f);
+	Vector2f outputAngleTextContainerPosition = Vector2f(-VIEW_WIDTH / 2 + 30.0f, -460.0f);
+	Vector2f outputAngleTextContainerSize = Vector2f(300.0f, 60.0f);
 
-	Vector2f outputAngleValueContainerPosition = sf::Vector2f(-VIEW_WIDTH / 2 + 330.0f, -460.0f);
-	Vector2f outputAngleValueContainerSize = sf::Vector2f(100.0f, 60.0f);
+	Vector2f outputAngleValueContainerPosition = Vector2f(-VIEW_WIDTH / 2 + 330.0f, -460.0f);
+	Vector2f outputAngleValueContainerSize = Vector2f(140.0f, 60.0f);
 
-	Vector2f outputAngleTextPosition = sf::Vector2f(-VIEW_WIDTH / 2 + 46.0f, -444.0f);
-	Vector2f outputAngleValuePosition = sf::Vector2f(-VIEW_WIDTH / 2 + 352.0f, -444.0f);
+	Vector2f outputAngleTextPosition = Vector2f(-VIEW_WIDTH / 2 + 46.0f, -444.0f);
+	Vector2f outputAngleValuePosition = Vector2f(-VIEW_WIDTH / 2 + 352.0f, -444.0f);
 
+
+	// Launch button 
+	CircleShape launchButton;
+	Text launchButtonText;
+	Color launchButtonTextColor = Color::White;
+	int launchButtonTextSize = 18;
+
+	Vector2f launchButtonPosition = Vector2f(-VIEW_WIDTH / 2 + 500.0f, -VIEW_HEIGHT / 2 + 60.0f);
+	Vector2f launchButtonTextPosition = Vector2f(-VIEW_WIDTH / 2 + 510.0f, -VIEW_HEIGHT / 2 + 40.0f);
+	float launchButtonRadius = 60.f;
 
 	// End game text 
 	Text endGameTxt;
@@ -94,7 +104,7 @@ private:
 
 	Vector2f endGameTextPosition = Vector2f(-130.0f, -40.0f);
 
-
+	bool isLaunchButtonFocused = false;
 	bool isOutputAngleValueContainerFocused = false;
 	bool noFocus = true;
 

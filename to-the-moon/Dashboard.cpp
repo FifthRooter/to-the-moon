@@ -76,6 +76,19 @@ Dashboard::Dashboard()
 	outputAngleValueContainer.setFillColor(sf::Color::Transparent);
 
 
+	// Launch button
+	launchButton.setRadius(launchButtonRadius);
+	launchButton.setPosition(launchButtonPosition);
+	launchButton.setFillColor(Color::Red);
+
+	launchButtonText.setColor(launchButtonTextColor);
+	launchButtonText.setCharacterSize(launchButtonTextSize);
+	launchButtonText.setStyle(textStyle);
+	launchButtonText.setFillColor(launchButtonTextColor);
+	launchButtonText.setPosition(launchButtonTextPosition);
+	launchButtonText.setString("Launch");
+
+
 	// End game text setup
 	endGameTxt.setFont(font);
 	endGameTxt.setCharacterSize(endGameTextSize);
@@ -117,6 +130,7 @@ void Dashboard::Draw(RenderWindow & window)
 	if (!disableGamePopup && isEndGamePopupOpen) {
 		window.draw(endGameTxt);
 	}
+	window.draw(launchButton);
 	window.draw(thetaMoonEquation);
 	window.draw(gravityLaw);
 	window.draw(deltaVTransfer);
@@ -135,11 +149,17 @@ void Dashboard::toggleFocusAllContainers(bool isFocused)
 
 void Dashboard::focusIfDashboardClicked(Vector2i mousePosition)
 {
-	sf::IntRect scWetMassContainer(outputAngleValueContainer.getPosition().x, outputAngleValueContainer.getPosition().y, outputAngleValueContainer.getGlobalBounds().width, outputAngleValueContainer.getGlobalBounds().height);
+	sf::IntRect outPutAngleContainer(outputAngleValueContainer.getPosition().x, outputAngleValueContainer.getPosition().y, outputAngleValueContainer.getGlobalBounds().width, outputAngleValueContainer.getGlobalBounds().height);
+	sf::IntRect launchButtonContainer(launchButton.getPosition().x, launchButton.getPosition().y, launchButton.getGlobalBounds().width, launchButton.getGlobalBounds().height);
 
-	if (scWetMassContainer.contains(mousePosition)) {
+	if (outPutAngleContainer.contains(mousePosition)) {
 		toggleFocusAllContainers(false);
 		isOutputAngleValueContainerFocused = true;
+	}
+	else if (launchButtonContainer.contains(mousePosition)) {
+		cout << "Launch button toggled!" << endl;
+		toggleFocusAllContainers(false);
+		isLaunchButtonFocused = true;
 	}
 	else {
 		toggleFocusAllContainers(false);
@@ -147,27 +167,33 @@ void Dashboard::focusIfDashboardClicked(Vector2i mousePosition)
 	}
 }
 
-void Dashboard::pushInput(int parameterValue, string parameter)
+void Dashboard::pushInput(double parameterValue, string parameter)
 {
 	if (parameter == "OutputAngle") {
+		cout << "Dashboard Output angle: " << parameterValue << endl;
 		outputAngleValue = parameterValue;
 		outputAngleValueText.setString(to_string(parameterValue) + "deg");
 		valueToBeChanged = "noFocus";
 	}
 }
 
-int Dashboard::getOutputAngle()
+double Dashboard::getOutputAngle()
 {
 	return outputAngleValue;
 }
 
 void Dashboard::endGamePopup(bool isSuccess)
 {
-	cout << "End of Game popup toggled!" << endl;
+	disableGamePopup = false;
+	isEndGamePopupOpen = true;
 	if (isSuccess) {
+		endGameTxt.setColor(successColor);
 		endGameTxt.setString("Success!");
 	}
-	else endGameTxt.setString("Launch failed :(");
+	else {
+		endGameTxt.setString("Launch failed :(");
+		endGameTxt.setColor(successColor);
+	}
 }
 
 void Dashboard::closeGamePopup() {
