@@ -167,12 +167,13 @@ void Dashboard::focusIfDashboardClicked(Vector2i mousePosition)
 	}
 }
 
-void Dashboard::pushInput(double parameterValue, string parameter)
+void Dashboard::pushInput(string parameterValue, string parameter)
 {
 	if (parameter == "OutputAngle") {
 		cout << "Dashboard Output angle: " << parameterValue << endl;
-		outputAngleValue = parameterValue;
-		outputAngleValueText.setString(to_string(parameterValue) + "deg");
+		
+		//outputAngleValue = parameterValue;
+		outputAngleValueText.setString(parameterValue + "deg");
 		valueToBeChanged = "noFocus";
 	}
 }

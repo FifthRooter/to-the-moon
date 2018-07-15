@@ -20,7 +20,7 @@ public:
 
 public:
 	String valueToBeChanged;
-	void pushInput(double, string);
+	void pushInput(string, string);
 	double getOutputAngle();
 	void endGamePopup(bool);
 	void closeGamePopup();
