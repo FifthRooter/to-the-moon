@@ -17,10 +17,11 @@ public:
 
 	String Update(Vector2i& mousePosition, RenderWindow& window);
 	void Draw(sf::RenderWindow& window);
+	void launchButtonToggled(bool);
 
 public:
 	String valueToBeChanged;
-	void pushInput(string, string);
+	void pushInput(double, string);
 	double getOutputAngle();
 	void endGamePopup(bool);
 	void closeGamePopup();
@@ -38,7 +39,7 @@ private:
 	string outputAngle;
 	string outputAngleTxt = "Input launch angle: ";
 
-	double outputAngleValue = 1234;
+	double outputAngleValue = 45.56;
 
 	Text outputAngleText;
 	Text outputAngleValueText;
@@ -59,16 +60,16 @@ private:
 	Texture thetaMoonEquationTexture;
 	Texture gravityLawTexture;
 
-	Vector2f rocketEquationTexturePosition = Vector2f(-VIEW_WIDTH / 2 + 212.0f, 233.0f);
+	Vector2f rocketEquationTexturePosition = Vector2f(-VIEW_WIDTH / 2 + 35.0f, 130.0f);
 	Vector2f rocketEquationTextureSize = Vector2f(255.0f, 73.0f);
 
-	Vector2f gravityLawTexturePosition = Vector2f(-VIEW_WIDTH / 2 + 35.0f, 183.0f);
+	Vector2f gravityLawTexturePosition = Vector2f(-VIEW_WIDTH / 2 + 35.0f, 40.0f);
 	Vector2f gravityLawTextureSize = Vector2f(161.0f, 54.0f);
 
-	Vector2f deltaVTransferTexturePosition = Vector2f(-VIEW_WIDTH / 2 + 100.0f, 390.0f);
+	Vector2f deltaVTransferTexturePosition = Vector2f(-VIEW_WIDTH / 2 + 35.0f, 340.0f);
 	Vector2f deltaVTransferTextureSize = Vector2f(367.0f, 76.0f);
 
-	Vector2f thetaMoonEquationTexturePosition = Vector2f(-VIEW_WIDTH / 2 + 35.0f, 304.0f);
+	Vector2f thetaMoonEquationTexturePosition = Vector2f(-VIEW_WIDTH / 2 + 35.0f, 234.0f);
 	Vector2f thetaMoonEquationTextureSize = Vector2f(214.0f, 66.0f);
 
 
@@ -90,11 +91,16 @@ private:
 	// Launch button 
 	CircleShape launchButton;
 	Text launchButtonText;
-	Color launchButtonTextColor = Color::White;
-	int launchButtonTextSize = 18;
+	Text::Style launchTextStyle = Text::Style::Bold;
+	Color launchButtonTextColor = Color::Black;
+	Color launchButtonToggledColor = Color::White;
+	Color launchButtonNormalColor = Color::Red;
+	
 
-	Vector2f launchButtonPosition = Vector2f(-VIEW_WIDTH / 2 + 500.0f, -VIEW_HEIGHT / 2 + 60.0f);
-	Vector2f launchButtonTextPosition = Vector2f(-VIEW_WIDTH / 2 + 510.0f, -VIEW_HEIGHT / 2 + 40.0f);
+	int launchButtonTextSize = 27;
+
+	Vector2f launchButtonPosition = Vector2f(-VIEW_WIDTH / 2 + 550.0f, -VIEW_HEIGHT / 2 + 60.0f);
+	Vector2f launchButtonTextPosition = Vector2f(-VIEW_WIDTH / 2 + 568.0f, -VIEW_HEIGHT / 2 + 98.0f);
 	float launchButtonRadius = 60.f;
 
 	// End game text 
