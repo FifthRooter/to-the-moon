@@ -215,6 +215,7 @@ void Dashboard::endGamePopup(bool isSuccess)
 void Dashboard::closeGamePopup() {
 	isEndGamePopupOpen = false;
 	disableGamePopup = true;
+	endGameTxt.setString("");
 }
 
 
