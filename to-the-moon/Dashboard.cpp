@@ -52,7 +52,7 @@ Dashboard::Dashboard()
 
 	// Output angle value setup
 	outputAngleValueText.setFont(font);
-	outputAngleValueText.setString("34.53 deg");
+	outputAngleValueText.setString("0.00 deg");
 	outputAngleValueText.setPosition(outputAngleValuePosition);
 
 	outputAngleValueText.setCharacterSize(textSize);
